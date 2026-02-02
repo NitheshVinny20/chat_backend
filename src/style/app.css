@@ -1,0 +1,66 @@
+body{
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background-color: wheat;
+}
+/* Chat*/
+input{
+    padding: 8px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.messages-container{
+    border: #28a745 2px solid;
+    padding: 10px;
+    border-radius: 8px;
+    height: 400px;
+    width: 400px;
+    overflow-y: auto;
+    background-color: white;
+}
+/* Chat end */
+
+/* user */
+.user-info{
+    margin-bottom: 20px;
+    border: #28a745 2px solid;
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content; 
+    background-color: white;
+}
+.user-info img{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.user-info p{
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+.user-info p:first-of-type{
+    font-weight: bold;
+    font-size: 18px;
+}
+/* user end */
+
+/* regular */
+button{
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+/* regular end */
