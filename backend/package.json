@@ -1,5 +1,5 @@
-{
-{\n  "type": "module",
+﻿{
+  "type": "module",
   "name": "chat-backend",
   "version": "1.0.0",
   "description": "Simple chat backend (Express + MongoDB)",
