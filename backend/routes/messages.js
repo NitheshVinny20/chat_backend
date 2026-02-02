@@ -17,11 +17,18 @@ router.get("/", async (req, res) => {
 // POST a new message
 router.post("/", async (req, res) => {
   try {
-    const message = new Message(req.body);
+    // Basic validation to provide clearer errors
+    const { text, userId, userName } = req.body || {};
+    if (!text || !String(text).trim()) {
+      console.warn("POST /api/messages validation failed - body:", req.body);
+      return res.status(400).json({ error: "`text` is required" });
+    }
+
+    const message = new Message({ text: String(text).trim(), userId, userName });
     await message.save();
     res.status(201).json(message);
   } catch (err) {
-    console.error("POST /api/messages error:", err.message);
+    console.error("POST /api/messages error:", err && err.message ? err.message : err);
     res.status(400).json({ error: err.message || "Failed to create message" });
   }
 });
