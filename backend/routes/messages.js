@@ -9,7 +9,8 @@ router.get("/", async (req, res) => {
     const messages = await Message.find().sort({ createdAt: 1 });
     res.json(messages);
   } catch (err) {
-    res.status(500).json({ error: "check connection" });
+    console.error("GET /api/messages error:", err.message);
+    res.status(500).json({ error: err.message || "Failed to fetch messages" });
   }
 });
 
