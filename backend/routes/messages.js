@@ -20,7 +20,8 @@ router.post("/", async (req, res) => {
     await message.save();
     res.status(201).json(message);
   } catch (err) {
-    res.status(400).json({ error: "check connection" });
+    console.error("POST /api/messages error:", err.message);
+    res.status(400).json({ error: err.message || "Failed to create message" });
   }
 });
 
